@@ -4,6 +4,7 @@ import { Tooltip } from "react-tooltip";
 import { FaBars, FaUserCircle } from "react-icons/fa";
 import logoImg from '../assets/logo.png'
 import { AuthContext } from "../context/AuthContext";
+import DefaultProfileImg from '../assets/logo.png'
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -19,13 +20,13 @@ const Navbar = () => {
       <li>
         <NavLink to="/" className={({ isActive }) => isActive ? "text-pink-500 font-semibold" : ""}>Home</NavLink>
       </li>
+      <li><NavLink to="/all-products" className={({ isActive }) => isActive ? "text-pink-500 font-semibold" : ""}>Products</NavLink></li>
 
       {
         user && <>
-          <li><NavLink to="/all-products" className={({ isActive }) => isActive ? "text-pink-500 font-semibold" : ""}>Products</NavLink></li>
           <li><NavLink to="/my-imports" className={({ isActive }) => isActive ? "text-pink-500 font-semibold" : ""}>My Imports</NavLink></li>
           <li><NavLink to="/add-product" className={({ isActive }) => isActive ? "text-pink-500 font-semibold" : ""}>Add Product</NavLink></li>
-          
+
         </>
       }
       <li><NavLink to="/about-us" className={({ isActive }) => isActive ? "text-pink-500 font-semibold" : ""}>About</NavLink></li>
@@ -66,24 +67,34 @@ const Navbar = () => {
       <div className="navbar-end flex items-center gap-3">
         {user ? (
           <>
-
-            <div
+            <div className="flex items-center"
               data-tooltip-id="user-tooltip"
               data-tooltip-content={user?.displayName || "User"}
             >
               {user.photoURL ? (
-                <Link to='/profile' className="cursor-pointer">
-                  <img
-                    src={user.photoURL}
-                    alt="user"
-                    className="w-10 h-10 rounded-full border-2 border-pink-400 hover:scale-105 transition"
-                  />
-                </Link>
+                <>
+                  <Link to="/profile" className="cursor-pointer">
+                    <img
+                      src={user.photoURL ? user.photoURL : DefaultProfileImg}
+                      alt="user"
+                      className="w-10 h-10 rounded-full border-2 border-pink-400 hover:scale-105 transition"
+                    />
+                  </Link>
+
+                  <Link
+                    to="/auth/register"
+                    className="btn btn-sm bg-purple-500 hover:bg-purple-600 text-white ml-2"
+                  >
+                    Registration
+                  </Link>
+                </>
               ) : (
                 <FaUserCircle className="text-3xl text-gray-500" />
               )}
             </div>
+
             <Tooltip id="user-tooltip" place="bottom" />
+
             <button
               onClick={handleLogout}
               className="btn btn-sm bg-pink-500 hover:bg-pink-600 text-white"
@@ -92,11 +103,23 @@ const Navbar = () => {
             </button>
           </>
         ) : (
-          <Link to="/auth/login" className="btn btn-sm bg-pink-500 hover:bg-pink-600 text-white">
-            Login
-          </Link>
+          <>
+            <Link
+              to="/auth/login"
+              className="btn btn-sm bg-pink-500 hover:bg-pink-600 text-white"
+            >
+              Login
+            </Link>
+            <Link
+              to="/auth/register"
+              className="btn btn-sm bg-purple-500 hover:bg-purple-600 text-white"
+            >
+              Registration
+            </Link>
+          </>
         )}
       </div>
+
     </div>
   );
 };
