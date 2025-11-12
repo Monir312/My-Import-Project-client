@@ -3,16 +3,6 @@ import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
 
 const Home = () => {
-  React.useEffect(() => {
-    console.log("SweetAlert is about to run...");
-
-    Swal.fire({
-      title: "The Internet?",
-      text: "That thing is still around?",
-      icon: "question",
-    });
-  }, []);
-
 
   const handleClick = () => {
     toast.success("Welcome back!", { position: "top-center" });
@@ -20,7 +10,7 @@ const Home = () => {
 
   return (
     <div>
-     <h2>Home</h2>
+     <h2>Food & Beverage Trade Hub</h2>
      <button onClick={handleClick}>Show Toast</button>
     </div>
   );
