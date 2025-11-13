@@ -37,7 +37,7 @@ const RecentProducts = () => {
             >
               <img
                 src={product.pictureURL}
-                alt={product.toyName} // can change to productName
+                alt={product.toyName} 
                 className="w-full h-64 object-cover"
               />
               <div className="p-6">
