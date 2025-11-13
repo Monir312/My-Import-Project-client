@@ -25,16 +25,17 @@ const Navbar = () => {
       {
         user && <>
           <li><NavLink to="/my-imports" className={({ isActive }) => isActive ? "text-pink-500 font-semibold" : ""}>My Imports</NavLink></li>
-          <li><NavLink to="/add-product" className={({ isActive }) => isActive ? "text-pink-500 font-semibold" : ""}>Add Product</NavLink></li>
+          <li><NavLink to="/add-exported-product" className={({ isActive }) => isActive ? "text-pink-500 font-semibold" : ""}>Add Export</NavLink></li>
+          <li><NavLink to="/my-exported-products" className={({ isActive }) => isActive ? "text-pink-500 font-semibold" : ""}>My Export</NavLink></li>
 
         </>
       }
-      <li><NavLink to="/about-us" className={({ isActive }) => isActive ? "text-pink-500 font-semibold" : ""}>About</NavLink></li>
+
     </>
   );
 
   return (
-    <div className="navbar bg-gradient-to-r from-pink-100 via-purple-100 to-blue-100 px-4 md:px-12 py-3 shadow-md sticky top-0 z-50 backdrop-blur-md">
+    <div className="navbar bg-gradient-to-r from-pink-100 via-purple-100 to-blue-100 px-2 md:px-3 py-2 shadow-md sticky top-0 z-50 backdrop-blur-md">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost md:hidden">
@@ -43,7 +44,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-white rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 p-1 shadow bg-white rounded-box w-40"
           >
             {navLinks}
           </ul>
@@ -67,27 +68,19 @@ const Navbar = () => {
       <div className="navbar-end flex items-center gap-3">
         {user ? (
           <>
-            <div className="flex items-center"
+            <div
+              className="flex items-center"
               data-tooltip-id="user-tooltip"
               data-tooltip-content={user?.displayName || "User"}
             >
               {user.photoURL ? (
-                <>
-                  <Link to="/profile" className="cursor-pointer">
-                    <img
-                      src={user.photoURL ? user.photoURL : DefaultProfileImg}
-                      alt="user"
-                      className="w-10 h-10 rounded-full border-2 border-pink-400 hover:scale-105 transition"
-                    />
-                  </Link>
-
-                  <Link
-                    to="/auth/register"
-                    className="btn btn-sm bg-purple-500 hover:bg-purple-600 text-white ml-2"
-                  >
-                    Registration
-                  </Link>
-                </>
+                <Link to="/profile" className="cursor-pointer">
+                  <img
+                    src={user.photoURL ? user.photoURL : DefaultProfileImg}
+                    alt="user"
+                    className="w-10 h-10 rounded-full border-2 border-pink-400 hover:scale-105 transition"
+                  />
+                </Link>
               ) : (
                 <FaUserCircle className="text-3xl text-gray-500" />
               )}
@@ -119,6 +112,7 @@ const Navbar = () => {
           </>
         )}
       </div>
+
 
     </div>
   );

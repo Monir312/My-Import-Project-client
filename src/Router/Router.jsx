@@ -4,14 +4,14 @@ import Home from "../pages/Home/Home";
 import MainLayout from "../layouts/MainLayout";
 import Loading from "../pages/Loading";
 import AllProduct from "../pages/AllProduct/AllProduct";
-import About from "../pages/About/About";
 import MyImport from "../pages/MyImport/MyImport";
-import AddProduct from "../pages/AddProduct/AddProduct";
 import ProductDetails from "../pages/ProductDetails/ProductDetails";
 import Login from "../pages/Login/Login";
 import Registration from "../pages/Registration/Registration";
 import PrivateRoute from "../Routes/PrivateRoute";
 import ErrorPage from "../pages/404Page/ErrorPage";
+import AddExport from "../pages/AddExport/AddExport";
+import MyExport from "../pages/MyExport/MyExport";
 
 
 export const router = createBrowserRouter([
@@ -24,7 +24,7 @@ export const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: "/products",
+        path: "/all-products", 
         element: <AllProduct />,
         hydrateFallbackElement: <Loading></Loading>
       },
@@ -37,15 +37,16 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/add-product",
+        path: "/add-exported-product",
         element: (
           <PrivateRoute>
-            <AddProduct />
+            <AddExport />
+
           </PrivateRoute>
         ),
       },
       {
-        path: "/product-details/:id",
+        path: "/product-details/:productId",
         element: (
           <PrivateRoute>
             <ProductDetails />
@@ -53,8 +54,8 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/about",
-        element: <About />,
+        path: "/my-exported-products",
+        element: <MyExport />,
       },
       {
         path: "/auth/login",

@@ -27,8 +27,8 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <Link to="/about" className="hover:text-pink-500 transition-colors flex items-center">
-                <FcAbout className="mr-2"></FcAbout> About Us
+              <Link to="/all-products" className="hover:text-pink-500 transition-colors flex items-center">
+                <FcAbout className="mr-2"></FcAbout> Products
               </Link>
             </li>
             <li>

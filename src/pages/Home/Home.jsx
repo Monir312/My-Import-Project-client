@@ -1,17 +1,17 @@
 import React from 'react';
-import { toast } from 'react-toastify';
-import Swal from 'sweetalert2';
+import Banner from '../Section/Banner';
+import RecentProducts from '../Section/RecentProducts';
+import Reviews from '../Section/Reviews';
+import WhyChooseUs from '../Section/WhyChooseUs';
 
 const Home = () => {
 
-  const handleClick = () => {
-    toast.success("Welcome back!", { position: "top-center" });
-  };
-
   return (
     <div>
-     <h2>Food & Beverage Trade Hub</h2>
-     <button onClick={handleClick}>Show Toast</button>
+     <Banner></Banner>
+    <RecentProducts></RecentProducts>
+    <Reviews></Reviews>
+    <WhyChooseUs></WhyChooseUs>
     </div>
   );
 };
