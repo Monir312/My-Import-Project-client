@@ -35,14 +35,14 @@ const Registration = () => {
     }
     setError('');
 
-    // Create User
+
     createUser(email, password)
       .then((result) => {
         const user = result.user;
         console.log("User created:", user);
         toast.success('Registration successful!');
 
-        // Update Profile
+
         updateUser({ displayName: name, photoURL: photoURL })
           .then(() => {
             navigate("/");
@@ -79,7 +79,7 @@ const Registration = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-100 via-white to-indigo-100 p-4">
       <div className="w-full max-w-md bg-white/80 backdrop-blur-xl border border-white/30 shadow-2xl rounded-3xl p-8">
-        {/* Header */}
+
         <div className="flex items-center text-3xl justify-center">
           <h2 className="font-bold text-center text-indigo-600 mb-2 drop-shadow-sm">
             Create an Account
@@ -92,7 +92,7 @@ const Registration = () => {
         </p>
 
         <form onSubmit={handleRegister} className="space-y-4">
-          {/* Name */}
+
           <div>
             <label className="block text-sm font-medium text-gray-600 mb-1">
               Full Name

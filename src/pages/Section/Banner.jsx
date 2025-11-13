@@ -7,12 +7,11 @@ const Banner = () => {
   const [current, setCurrent] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
-  // Fetch random 3 products from server
+
   useEffect(() => {
     fetch("http://localhost:4000/products")
       .then(res => res.json())
       .then(data => {
-        // Random 3 products
         const shuffled = data.sort(() => 0.5 - Math.random());
         const selected = shuffled.slice(0, 3);
         setSlides(selected);
@@ -20,7 +19,6 @@ const Banner = () => {
       .catch(err => console.error(err));
   }, []);
 
-  // Auto slide
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isHovered && slides.length > 0) {
@@ -31,11 +29,11 @@ const Banner = () => {
     return () => clearInterval(interval);
   }, [isHovered, slides.length]);
 
-  if (slides.length === 0) return null; // Loading / empty state
+  if (slides.length === 0) return null; 
 
   const slide = slides[current];
 
-  // Gradient colors (random or fixed for each slide)
+
   const bgColors = [
     "from-pink-400 via-purple-500 to-indigo-600",
     "from-yellow-400 via-orange-400 to-red-500",
