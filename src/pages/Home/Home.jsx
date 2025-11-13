@@ -3,6 +3,7 @@ import Banner from '../Section/Banner';
 import RecentProducts from '../Section/RecentProducts';
 import Reviews from '../Section/Reviews';
 import WhyChooseUs from '../Section/WhyChooseUs';
+import App from '../../App';
 
 const Home = () => {
 

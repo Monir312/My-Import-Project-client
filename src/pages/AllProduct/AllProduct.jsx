@@ -47,7 +47,7 @@ const AllProduct = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 p-8">
+    <div className="min-h-screen bg-linear-to-br from-pink-50 via-purple-50 to-blue-50 p-8">
       <div className="text-center mb-12">
         <h1 className="text-5xl md:text-6xl font-extrabold text-purple-700 mb-4">
           Explore Our Product Collection

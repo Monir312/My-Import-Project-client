@@ -77,7 +77,7 @@ const Registration = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-100 via-white to-indigo-100 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-pink-100 via-white to-indigo-100 p-4">
       <div className="w-full max-w-md bg-white/80 backdrop-blur-xl border border-white/30 shadow-2xl rounded-3xl p-8">
 
         <div className="flex items-center text-3xl justify-center">

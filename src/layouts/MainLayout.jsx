@@ -3,6 +3,7 @@ import { Outlet, useNavigation } from 'react-router';
 import Navbar from '../components/Navbar';
 import Loading from '../pages/Loading';
 import Footer from '../components/Footer';
+import ChangeMode from '../colorContent/ChangeMode';
 
 
 const MainLayout = () => {
@@ -16,6 +17,8 @@ const MainLayout = () => {
           <Navbar></Navbar>
         </nav>
       </header>
+      <ChangeMode />
+
 
       <main className='w-full '>
         <section className="main col-span-6">

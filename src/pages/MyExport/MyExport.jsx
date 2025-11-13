@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../context/AuthContext";
+import { FaStar } from "react-icons/fa";
 
 const MyExports = () => {
   const { user } = useContext(AuthContext);
@@ -106,7 +107,7 @@ const MyExports = () => {
               />
               <h2 className="text-xl font-semibold mt-2">{product.productName}</h2>
               <p className="text-gray-700">Price: ${product.price?.toFixed(2)}</p>
-              <p className="text-gray-700">Rating: {product.rating} ⭐</p>
+              <p className="text-gray-700 flex items-center">Rating: {product.rating} <FaStar className="text-yellow-300"></FaStar></p>
               <p className="text-gray-700">Origin: {product.originCountry || "N/A"}</p>
               <p className="text-gray-700">Available Quantity: {product.availableQuantity}</p>
 
@@ -131,8 +132,10 @@ const MyExports = () => {
 
 
       {editProduct && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white p-6 rounded-lg w-96">
+        <div className="fixed inset-0 flex justify-center items-center z-50">
+          <div className="absolute inset-0 bg-[#858685] bg-opacity-100 backdrop-blur-sm"></div>
+
+          <div className="relative bg-white p-6 rounded-lg w-96 z-10">
             <h2 className="text-2xl font-bold mb-4">Update Product</h2>
             <form onSubmit={handleUpdate} className="space-y-3">
               <input
@@ -218,6 +221,9 @@ const MyExports = () => {
           </div>
         </div>
       )}
+
+
+
     </div>
   );
 };
