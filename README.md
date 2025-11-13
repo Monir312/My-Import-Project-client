@@ -1,16 +1,43 @@
-# React + Vite
+🌐 Smart Export Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack web application designed to manage product exports efficiently in real-time.
+Built using React.js, Node.js, Express.js, and MongoDB, this system allows users to add, view, update, and delete export products seamlessly.
+It also integrates Firebase Authentication for secure login and personalized product management.
 
-Currently, two official plugins are available:
+🚀 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+✅ User Authentication — Secure login system using Firebase (Email/Password & Google Login).
+✅ Add Exports — Users can easily add new products with detailed information (name, image, price, origin, rating, etc.).
+✅ View My Exports — Logged-in users can view their own exports filtered by their email.
+✅ Update Products — Edit export details in real time with a clean modal-based update interface.
+✅ Delete Products — Remove any product instantly with confirmation alerts.
+✅ Dynamic UI — Fully responsive design with Tailwind CSS and smooth transitions using Framer Motion.
+✅ Backend Integration — Node.js and Express handle all API routes, including CRUD operations.
+✅ MongoDB Database — Efficient and scalable NoSQL database to store export data.
 
-## React Compiler
+🧩 Tech Stack
+Layer	Technology
+Frontend	React.js, Tailwind CSS, Framer Motion
+Backend	Node.js, Express.js
+Database	MongoDB Atlas
+Authentication	Firebase Authentication
+Hosting	Vercel (Frontend) & Render / Vercel (Backend)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+🎨 UI Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Elegant and modern interface with Tailwind CSS
+
+Product cards with live Update & Delete actions
+
+Modal-based edit form
+
+SweetAlert2 popups for success/error messages
+
+Fully mobile-responsive design
+
+
+💡 Developer Information
+
+Author: Md. Manirul Islam
+Role: Full Stack Developer

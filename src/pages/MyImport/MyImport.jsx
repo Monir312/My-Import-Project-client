@@ -6,9 +6,9 @@ const MyImport = () => {
   const { user } = useContext(AuthContext);
   const [imports, setImports] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [editImport, setEditImport] = useState(null); // edit state
+  const [editImport, setEditImport] = useState(null); 
 
-  // Fetch imports
+
   useEffect(() => {
     if (!user) return;
 
@@ -28,7 +28,7 @@ const MyImport = () => {
     fetchImports();
   }, [user]);
 
-  // Remove import
+
   const handleRemove = async (id) => {
     const result = await Swal.fire({
       title: "Are you sure?",
@@ -56,7 +56,7 @@ const MyImport = () => {
     }
   };
 
-  // Update import
+
   const handleUpdate = async (e) => {
     e.preventDefault();
     if (!editImport) return;
@@ -129,7 +129,6 @@ const MyImport = () => {
         </div>
       )}
 
-      {/* Update Modal */}
       {editImport && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white p-6 rounded-lg w-96">

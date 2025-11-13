@@ -8,7 +8,7 @@ const MyExports = () => {
   const [editProduct, setEditProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Fetch user exports
+
   useEffect(() => {
     if (!user) return;
 
@@ -29,7 +29,7 @@ const MyExports = () => {
     fetchExports();
   }, [user]);
 
-  // Delete product
+
   const handleDelete = async (id) => {
     const confirm = await Swal.fire({
       title: "Are you sure?",
@@ -56,12 +56,12 @@ const MyExports = () => {
     }
   };
 
-  // Open edit modal
+
   const handleEdit = (product) => {
     setEditProduct(product);
   };
 
-  // Update product
+
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
@@ -129,7 +129,7 @@ const MyExports = () => {
         </div>
       )}
 
-      {/* Update Modal */}
+
       {editProduct && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white p-6 rounded-lg w-96">

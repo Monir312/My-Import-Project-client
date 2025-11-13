@@ -12,7 +12,6 @@ const ProductDetails = () => {
   const [quantity, setQuantity] = useState(1);
   const [modalOpen, setModalOpen] = useState(false);
 
-  // Fetch product details
   useEffect(() => {
     fetch(`http://localhost:4000/products/${productId}`)
       .then((res) => res.json())
@@ -59,7 +58,7 @@ const ProductDetails = () => {
     };
 
     try {
-      // Save import in imports collection
+
       const res = await fetch("http://localhost:4000/imports", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -68,14 +67,12 @@ const ProductDetails = () => {
       const data = await res.json();
 
       if (data.insertedId) {
-        // Update product quantity in DB
         await fetch(`http://localhost:4000/products/${product._id}`, {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ $inc: { availableQuantity: -quantity } }),
         });
 
-        // Update UI
         setProduct({
           ...product,
           availableQuantity: product.availableQuantity - quantity,
@@ -108,7 +105,6 @@ const ProductDetails = () => {
   return (
     <div className="container mx-auto py-12 px-6">
       <div className="flex flex-col md:flex-row gap-10 items-start">
-        {/* Product Image */}
         <div className="md:w-1/2 flex justify-center">
           <img
             src={product.pictureURL}
@@ -156,7 +152,6 @@ const ProductDetails = () => {
         </div>
       </div>
 
-      {/* Modal */}
       {modalOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50">
           <div className="bg-white rounded-2xl shadow-xl p-8 w-125 relative">
