@@ -77,8 +77,8 @@ React Hook Form
 Clone the repo and install dependencies:
 
 ```bash
-git clone https://github.com/Monir312/my-import-project
-cd my-import-project
+[git clone https://github.com/Monir312/my-import-project](https://github.com/Monir312/My-Import-Project-client.git)
+cd My-Import-Project-client
 npm install
 ```
 
